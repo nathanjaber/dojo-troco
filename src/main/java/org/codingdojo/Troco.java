@@ -1,7 +1,9 @@
 package org.codingdojo;
 
-public class Troco {
-    public boolean isVazio(){
-        return true;
-    }
+import java.util.LinkedList;
+import java.util.List;
+
+public interface Troco {
+    boolean isVazio();
+    void adicionarNota(Nota nota);
 }
