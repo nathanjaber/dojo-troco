@@ -22,11 +22,22 @@ public class CaixaTest {
     }
 
     @Test
-    public void testCalcularTrocoUm() {
+    public void testCalcularTrocoUmaNotaDeUm() {
         Troco trocoExemplo = new Troco();
         trocoExemplo.adicionarNota(new Nota(1));
 
         Caixa caixa = new Caixa(new Dinheiro(9), new Dinheiro(10));
+        Troco trocoCalculado = caixa.calcularTroco();
+
+        assertTrue(trocoExemplo.equals(trocoCalculado));
+    }
+
+    @Test
+    public void testCalcularTrocoUmaNotaDeDois() {
+        Troco trocoExemplo = new Troco();
+        trocoExemplo.adicionarNota(new Nota(2));
+
+        Caixa caixa = new Caixa(new Dinheiro(8), new Dinheiro(10));
         Troco trocoCalculado = caixa.calcularTroco();
 
         assertTrue(trocoExemplo.equals(trocoCalculado));

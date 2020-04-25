@@ -8,7 +8,6 @@ public class Dinheiro {
 
 	public Dinheiro(int valor) {
 		this.valor = valor;
-		System.out.println(valor);
 	}
 
 	public Dinheiro subtrair(Dinheiro outroDinheiro) {
@@ -17,7 +16,7 @@ public class Dinheiro {
 
 	public List<Nota> converterParaNotas() {
 		ArrayList<Nota> notas = new ArrayList<>();
-		notas.add(new Nota(1));
+		notas.add(new Nota(this.valor));
 		return notas;
 	}
 

@@ -15,7 +15,7 @@ public class Caixa {
      * método calcularTroco
      */
     public Troco calcularTroco() {
-        Dinheiro diferenca = this.preco.subtrair(this.valorPago);
+        Dinheiro diferenca = this.valorPago.subtrair(this.preco);
 
         Troco troco = new Troco();
         diferenca.converterParaNotas().forEach((nota) -> troco.adicionarNota(nota));
