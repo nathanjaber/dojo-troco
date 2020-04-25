@@ -8,4 +8,7 @@ public class Nota {
         this.valor = valor;
     }
 
+    public boolean equals(Nota outraNota) {
+        return this.valor == outraNota.valor;
+    }
 }

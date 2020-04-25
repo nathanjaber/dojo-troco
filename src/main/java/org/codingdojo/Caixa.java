@@ -1,22 +1,24 @@
 package org.codingdojo;
 
+
 public class Caixa {
-    private final TrocoFactory factory;
 
     private Dinheiro preco;
     private Dinheiro valorPago;
 
-    public Caixa(Dinheiro preco, Dinheiro valorPago, TrocoFactory factory) {
+    public Caixa(Dinheiro preco, Dinheiro valorPago) {
         this.preco = preco;
         this.valorPago = valorPago;
-        this.factory = factory;
     }
 
     /**
      * método calcularTroco
      */
     public Troco calcularTroco() {
-        Troco troco = this.factory.newInstance();
+        Dinheiro diferenca = this.preco.subtrair(this.valorPago);
+
+        Troco troco = new Troco();
+        diferenca.converterParaNotas().forEach((nota) -> troco.adicionarNota(nota));
         return troco;
     }
 }
