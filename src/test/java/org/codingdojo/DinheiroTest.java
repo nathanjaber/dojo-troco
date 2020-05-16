@@ -2,10 +2,12 @@ package org.codingdojo;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
 public class DinheiroTest {
-    
+
     @Test
     public void testSubtrairRetornandoZero() {
         Dinheiro diferenca = new Dinheiro(11).subtrair(new Dinheiro(11));
@@ -23,5 +25,9 @@ public class DinheiroTest {
         assertTrue(diferenca.equals(new Dinheiro(1)));
     }
 
-
+    @Test
+    public void testConverterParaUmaNotaDeUm () {
+        List<Nota> notas = new Dinheiro(1).converterParaNotas();
+        assertTrue(notas.get(0).equals(new Nota(1)));
+    }
 }
