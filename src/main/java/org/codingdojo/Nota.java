@@ -8,7 +8,15 @@ public class Nota {
         this.valor = valor;
     }
 
-    public boolean equals(Nota outraNota) {
-        return this.valor == outraNota.valor;
+    @Override
+    public boolean equals(Object outraNota) {
+        if (outraNota instanceof Nota)
+            return this.valor == ((Nota)outraNota).valor;
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(this.valor);
     }
 }

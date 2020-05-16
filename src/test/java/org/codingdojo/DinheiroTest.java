@@ -52,4 +52,12 @@ public class DinheiroTest {
         assertTrue(notas.get(0).equals(new Nota(10)));
         assertTrue(notas.size() == 1);
     }
+
+    @Test
+    public void testConverterTresDinheirosEmNotas() {
+        List<Nota> notas = new Dinheiro(3).converterParaNotas();
+        assertTrue(notas.size() == 2);
+        assertTrue(notas.contains(new Nota(1)));
+        assertTrue(notas.contains(new Nota(2)));
+    }
 }

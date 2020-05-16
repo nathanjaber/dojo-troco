@@ -18,7 +18,22 @@ public class Dinheiro {
 
 	public List<Nota> converterParaNotas() {
 		ArrayList<Nota> notas = new ArrayList<>();
-		notas.add(new Nota(this.valor));
+
+		// array de verificação, validando a regra de negócio
+		ArrayList<Integer> valoresPossiveis = new ArrayList<Integer>();
+		valoresPossiveis.add(10);
+		valoresPossiveis.add(5);
+		valoresPossiveis.add(2);
+		valoresPossiveis.add(1);
+
+		int restante = this.valor;
+		for (int i: valoresPossiveis) {
+			while (i <= restante) {
+				notas.add(new Nota(i));
+				restante -= i;
+			}
+		}
+
 		return notas;
 	}
 
@@ -26,3 +41,11 @@ public class Dinheiro {
 		return this.valor == outroDinheiro.valor;
 	}
 }
+
+/*
+    regra = 1, 2, 5, 10;
+    array[2, 1]
+    3 - 1 = 2;
+    2 - 1 = 1;
+    1 - 1 = 0;
+*/
