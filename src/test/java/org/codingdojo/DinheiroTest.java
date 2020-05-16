@@ -16,4 +16,12 @@ public class DinheiroTest {
     public void testSubtrairFalhandoAoRetornarNegativo() {
         new Dinheiro(11).subtrair(new Dinheiro(12));
     }
+
+    @Test
+    public void testSubtrairRetornandoMaiorQueZero() {
+        Dinheiro diferenca = new Dinheiro(12).subtrair(new Dinheiro(11));
+        assertTrue(diferenca.equals(new Dinheiro(1)));
+    }
+
+
 }
