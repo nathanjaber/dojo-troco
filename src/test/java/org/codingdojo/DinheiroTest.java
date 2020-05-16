@@ -31,4 +31,11 @@ public class DinheiroTest {
         assertTrue(notas.get(0).equals(new Nota(1)));
         assertTrue(notas.size() == 1);
     }
+
+    @Test
+    public void testConverterParaUmaNotaDeDois () {
+        List<Nota> notas = new Dinheiro(2). converterParaNotas();
+        assertTrue(notas.get(0).equals(new Nota(2)));
+        assertTrue(notas.size() == 1);
+    }
 }
