@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dinheiro {
-    private int valor;
+	private int valor;
+	
+	private static final int valoresPossiveis[] = new int[] { 10, 5, 2, 1 };
 
 	public Dinheiro(int valor) {
 		this.valor = valor;
@@ -18,13 +20,6 @@ public class Dinheiro {
 
 	public List<Nota> converterParaNotas() {
 		ArrayList<Nota> notas = new ArrayList<>();
-
-		// array de verificação, validando a regra de negócio
-		ArrayList<Integer> valoresPossiveis = new ArrayList<Integer>();
-		valoresPossiveis.add(10);
-		valoresPossiveis.add(5);
-		valoresPossiveis.add(2);
-		valoresPossiveis.add(1);
 
 		int restante = this.valor;
 		for (int i: valoresPossiveis) {
