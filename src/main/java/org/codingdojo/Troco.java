@@ -15,10 +15,16 @@ public class Troco{
         this.notas.add(nota);
     }
 
-    public boolean equals(Troco outroTroco) {
+    @Override
+    public boolean equals(Object outroTroco) {
+        if (!(outroTroco instanceof Troco))
+            return false;
+
+        Troco t = (Troco)outroTroco;
         for (int i = 0; i < this.notas.size(); i++)
-            if (!this.notas.get(i).equals(outroTroco.notas.get(i)))
+            if (!this.notas.get(i).equals(t.notas.get(i)))
                 return false;
+
         return true;
     }
 }

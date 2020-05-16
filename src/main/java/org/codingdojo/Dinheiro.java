@@ -37,15 +37,12 @@ public class Dinheiro {
 		return notas;
 	}
 
-	public boolean equals(Dinheiro outroDinheiro) {
-		return this.valor == outroDinheiro.valor;
+	@Override
+	public boolean equals(Object outroDinheiro) {
+		if (outroDinheiro instanceof Dinheiro) {
+			Dinheiro d = (Dinheiro)outroDinheiro;
+			return this.valor == d.valor;
+		}
+		return false;
 	}
 }
-
-/*
-    regra = 1, 2, 5, 10;
-    array[2, 1]
-    3 - 1 = 2;
-    2 - 1 = 1;
-    1 - 1 = 0;
-*/
