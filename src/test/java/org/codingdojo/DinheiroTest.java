@@ -29,5 +29,6 @@ public class DinheiroTest {
     public void testConverterParaUmaNotaDeUm () {
         List<Nota> notas = new Dinheiro(1).converterParaNotas();
         assertTrue(notas.get(0).equals(new Nota(1)));
+        assertTrue(notas.size() == 1);
     }
 }
