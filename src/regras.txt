@@ -1,3 +1,7 @@
 1- NOTAS PERMITIDAS: 1, 2, 5, 10;
 2- NOTAS SÃO INFINITAS;
 3- ENTRADA DO PROGRAMA: PREÇO E VALOR PAGO;
+4- Troco deve ser a menor quantidade de notas possível
+    Ex:
+    Um troco de 10 reais vira uma lista com uma nota de 10 reais
+    Um troco de 7 reais vira uma lista de uma nota de 5 reais e uma nota de 2 reais

@@ -11,6 +11,8 @@ public class Dinheiro {
 	}
 
 	public Dinheiro subtrair(Dinheiro outroDinheiro) {
+		if (this.valor < outroDinheiro.valor)
+			throw new RuntimeException("Quantidade inválida");
         return new Dinheiro(this.valor - outroDinheiro.valor);
 	}
 

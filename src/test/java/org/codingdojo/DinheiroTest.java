@@ -7,8 +7,13 @@ import org.junit.Test;
 public class DinheiroTest {
     
     @Test
-    public void testSubtrair() {
+    public void testSubtrairRetornandoZero() {
         Dinheiro diferenca = new Dinheiro(11).subtrair(new Dinheiro(11));
         assertTrue(diferenca.equals(new Dinheiro(0)));
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testSubtrairFalhandoAoRetornarNegativo() {
+        new Dinheiro(11).subtrair(new Dinheiro(12));
     }
 }
